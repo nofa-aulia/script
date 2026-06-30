@@ -58,7 +58,7 @@ func main() {
 		}
 
 		id := record[0]
-		waid := record[1]
+		externalMessageId := record[1]
 		payload := record[2]
 
 		messageGroupId := fmt.Sprintf("meta_webhook.messages-%s", id)
@@ -92,7 +92,7 @@ func main() {
 
 		fmt.Printf("Row %d: Message published successfully!\n", i)
 		fmt.Printf("Row %d: Message ID: %s\n", i, *result.MessageId)
-		fmt.Printf("Row %d: WAID: %s, ID: %s\n", i, waid, id)
+		fmt.Printf("Row %d: External Message Id: %s, ID: %s\n", i, externalMessageId, id)
 		fmt.Printf("Row %d: Message: %s\n", i, string(jsonMessage))
 		fmt.Printf("Row %d: Message Group ID: %s\n", i, messageGroupId)
 		fmt.Println("-----")
